@@ -1,5 +1,6 @@
 Revision history for XML::CompareML
 
+0.2.7    Wed 22 May 01:11:36 IDT 2013
     - Got rid of trailing whitespace.
         - t/style-trailing-space.t .
 
