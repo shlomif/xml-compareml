@@ -44,7 +44,7 @@ sub get_dtd
 <!ATTLIST section id ID #REQUIRED>
 <!ATTLIST a href CDATA #REQUIRED>
 <!ATTLIST s id CDATA #REQUIRED>
-<!ATTLIST impl id CDATA #REQUIRED> 
+<!ATTLIST impl id CDATA #REQUIRED>
 EOF
 }
 

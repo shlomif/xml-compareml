@@ -12,7 +12,7 @@ use Test::Differences;
 {
     my $buffer = "";
     my $file = IO::Scalar->new(\$buffer);
-    my $converter = 
+    my $converter =
         XML::CompareML::HTML->new(
             'input_filename' => "t/files/scm-comparison.xml",
             'output_handle' => $file,
@@ -28,7 +28,7 @@ use Test::Differences;
 {
     my $buffer = "";
     my $file = IO::Scalar->new(\$buffer);
-    my $converter = 
+    my $converter =
         XML::CompareML::DocBook->new(
             'input_filename' => "t/files/scm-comparison.xml",
             'output_handle' => $file,
@@ -54,7 +54,7 @@ sub normalize_space
 {
     my $buffer = "";
     my $file = IO::Scalar->new(\$buffer);
-    my $converter = 
+    my $converter =
         XML::CompareML::HTML->new(
             'input_filename' => "examples/scm-comparison.xml",
             'output_handle' => $file,

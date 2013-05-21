@@ -31,7 +31,7 @@ TODO:
                 <fullname>Not-Too-Bad</fullname>
                 <vendor>MyCompany</vendor>
             </impl>
-            
+
         </implementations>
         <timestamp>
             $Id: scm-comparison.xml 61 2005-04-06 17:09:28Z shlomif $
@@ -42,7 +42,7 @@ TODO:
     <title>Version Control System Comparison</title>
     <expl>
         This is a comparison of version-control systems. It is split
-        into several categories and sub-categories under which the 
+        into several categories and sub-categories under which the
         systems are checked.
     </expl>
     <section id="repos_operations">
@@ -50,11 +50,11 @@ TODO:
         <section id="atomic_commits">
             <title>Atomic Commits</title>
             <expl>
-                Support for atomic commits means that if an operation on the 
-                repository is interrupted in the middle, the repository will 
-                not be left in an inconsistant state. Are the check-in 
-                operations atomic? Are the check-in operations atomic, or can 
-                interrupting an operation leave the repository in an 
+                Support for atomic commits means that if an operation on the
+                repository is interrupted in the middle, the repository will
+                not be left in an inconsistant state. Are the check-in
+                operations atomic? Are the check-in operations atomic, or can
+                interrupting an operation leave the repository in an
                 intermediate state?
             </expl>
             <compare>

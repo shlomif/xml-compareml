@@ -85,7 +85,7 @@ sub _render_sys_table_start
     my ($self,%args) = @_;
 
     my $title_string = $args{title_string};
-    
+
     $self->_out(<<"EOF");
 <table frame=\"all\">
 <title>Comparison - $title_string</title>
@@ -112,7 +112,7 @@ sub _html_to_docbook
     foreach my $node (@child_nodes)
     {
         if ($node->nodeType() == ELEMENT_NODE())
-        {            
+        {
             if ($node->nodeName() eq "a")
             {
                 $ret .= "<ulink url=\"" . $node->getAttribute("href") . "\">";

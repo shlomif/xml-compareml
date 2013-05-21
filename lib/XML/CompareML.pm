@@ -23,7 +23,7 @@ Version 0.2.5
 
     use XML::CompareML::HTML;
 
-    my $converter = 
+    my $converter =
         XML::CompareML::HTML->new(
             'input_filename' => "my-comparison.xml",
             'output_handle' => \*STDOUT,
@@ -35,7 +35,7 @@ Or alternatively:
 
     use XML::CompareML::DocBook;
 
-    my $converter = 
+    my $converter =
         XML::CompareML::DocBook->new(
             'input_filename' => "my-comparison.xml",
             'output_handle' => \*STDOUT,
@@ -46,8 +46,8 @@ Or alternatively:
 =head1 USAGE
 
 The CompareML language is currently undocumented, but one can see
-an example for a document written it in the 
-C<t/files/scm-comparison.xml> example in the distribution. 
+an example for a document written it in the
+C<t/files/scm-comparison.xml> example in the distribution.
 
 To convert a CompareML document to HTML instantiate an XML::CompareML::HTML
 object, and pass it the filename as the C<input_filename> named parameter,

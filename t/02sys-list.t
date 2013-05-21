@@ -9,7 +9,7 @@ use IO::Scalar;
 
 my $no_use_buffer = "";
 my $file = IO::Scalar->new(\$no_use_buffer);
-my $converter = 
+my $converter =
     XML::CompareML::HTML->new(
         'input_filename' => "t/files/scm-sys-list-1.xml",
         'output_handle' => $file,
@@ -21,7 +21,7 @@ my $fh = IO::Scalar->new(\$buffer);
 $converter->gen_systems_list(output_handle => $fh);
 
 # TEST
-is ($buffer, 
+is ($buffer,
     <<"EOF",
 <li><a href="http://www.cvshome.org/">CVS</a></li>
 <li><a href="http://subversion.tigris.org/">Subversion Version Control System</a></li>

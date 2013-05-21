@@ -70,7 +70,7 @@ sub _impl_get_tag_text
     {
         return;
     }
-    return $self->_xml_node_contents_to_string($name_elem);    
+    return $self->_xml_node_contents_to_string($name_elem);
 }
 
 sub _impl_get_name
@@ -83,15 +83,15 @@ sub _impl_get_name
 sub _get_implementations
 {
     my $self = shift;
-    return 
-        [ 
-            map 
-                { 
+    return
+        [
+            map
+                {
                     +{
-                        'id' => $_->getAttribute("id"), 
+                        'id' => $_->getAttribute("id"),
                         'name' => $self->_impl_get_name($_)
-                    } 
-                } 
+                    }
+                }
             $self->_findnodes("/comparison/meta/implementations/impl")
         ];
 }
@@ -121,7 +121,7 @@ sub _initialize
         $parser = XML::LibXML->new();
         $parser->validation(0);
         $dom = $parser->parse_file($args{input_filename});
-        my $dtd = 
+        my $dtd =
             XML::LibXML::Dtd->parse_string(
                 XML::CompareML::DTD::Generate::get_dtd()
             );
@@ -172,7 +172,7 @@ sub process
     $self->_finish_rendering();
 
     print {*{$self->{o}}} $self->{document_text};
-    
+
     $self->_print_footer();
 }
 
@@ -232,11 +232,11 @@ sub _render_section
         'expl' => $expl,
         'sub_sections' => \@sub_sections,
         );
-        
+
     $self->_render_section_start(
         @args
     );
-    
+
     if ($compare)
     {
         $self->_render_sys_table_start(@args);

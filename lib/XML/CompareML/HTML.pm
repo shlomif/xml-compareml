@@ -38,7 +38,7 @@ sub _initialize
 
     my $style_doc = $self->_xml_parser()->parse_file(
             File::Spec->catfile(
-                $self->_data_dir(), 
+                $self->_data_dir(),
                 "compare-ml.xslt"
             ),
         );
@@ -52,7 +52,7 @@ sub _initialize
 
 Do the actual processing using the XSLT stylesheet.
 
-=cut 
+=cut
 
 sub process
 {
@@ -127,8 +127,8 @@ sub gen_systems_list
         {
             die "URL not specified for implementation $name.";
         }
-        print {$fh} qq{<li><a href="} . CGI::escapeHTML($url) . qq{">} . 
-            CGI::escapeHTML(defined($fullname) ? $fullname : $name) . 
+        print {$fh} qq{<li><a href="} . CGI::escapeHTML($url) . qq{">} .
+            CGI::escapeHTML(defined($fullname) ? $fullname : $name) .
             qq{</a>} . (defined($vendor) ? " by $vendor" : "") .
             qq{</li>\n}
             ;
