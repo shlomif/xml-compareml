@@ -35,7 +35,7 @@ name: XML-CompareML
 provides:
   XML::CompareML:
     file: lib/XML/CompareML.pm
-    version: v0.2.6
+    version: v0.2.7
   XML::CompareML::Base:
     file: lib/XML/CompareML/Base.pm
     version: 0
@@ -61,4 +61,4 @@ resources:
   license: http://www.opensource.org/licenses/mit-license.php
   x_Demo: http://better-scm.berlios.de/comparison/
   x_Repository: https://svn.berlios.de/svnroot/repos/web-cpan/xml-compareml/
-version: v0.2.6
+version: v0.2.7
