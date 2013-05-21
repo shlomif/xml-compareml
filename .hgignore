@@ -5,3 +5,7 @@ MYMETA.json
 MYMETA.yml
 _build
 blib
+
+syntax: regexp
+
+^XML-CompareML-v\d+\.\d+\.\d+(?:/|\.tar\.gz$)
