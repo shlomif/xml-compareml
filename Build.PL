@@ -24,7 +24,6 @@ my $builder = XML::Grammar::Builder->new(
         'IO::Scalar' => 0,
         'Test::Differences' => 0,
     },
-    create_makefile_pl => 'passthrough',
     meta_merge => {
         resources => {
             homepage => "http://web-cpan.berlios.de/modules/XML-CompareML/",
