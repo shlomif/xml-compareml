@@ -1,5 +1,10 @@
 Revision history for XML::CompareML
 
+0.2.8   2013-08-17
+    - Fix https://rt.cpan.org/Ticket/Display.html?id=87902
+        - «Changing "Repository" to "repository" in Build.PL will allow this
+        metadata to be seen/used».
+
 0.2.7   2013-05-22
     - Got rid of trailing whitespace.
         - t/style-trailing-space.t .

@@ -31,7 +31,7 @@ my $builder = XML::Grammar::Builder->new(
         resources => {
             homepage => "http://web-cpan.berlios.de/modules/XML-CompareML/",
             license => "http://www.opensource.org/licenses/mit-license.php",
-            Repository => "https://svn.berlios.de/svnroot/repos/web-cpan/xml-compareml/",
+            repository => "https://bitbucket.org/shlomif/xml-compareml",
             Demo => "http://better-scm.berlios.de/comparison/",
         },
         keywords =>
