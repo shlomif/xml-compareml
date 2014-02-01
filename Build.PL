@@ -19,6 +19,7 @@ my $builder = XML::Grammar::Builder->new(
         'XML::LibXML' => 0,
         'XML::LibXML::Common' => 0,
         'CGI' => 0,
+        'perl' => '5.008',
         'strict' => 0,
         'warnings' => 0,
     },

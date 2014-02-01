@@ -3,6 +3,8 @@ package XML::CompareML;
 use strict;
 use warnings;
 
+use 5.008;
+
 use vars qw($VERSION);
 
 $VERSION = '0.2.8';
