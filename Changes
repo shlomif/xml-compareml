@@ -1,5 +1,9 @@
 Revision history for XML::CompareML
 
+0.2.9   2014-02-01
+    - Minimal version of perl (CPANTS).
+    - Add separate LICENSE file (CPANTS).
+
 0.2.8   2013-08-17
     - Fix https://rt.cpan.org/Ticket/Display.html?id=87902
         - «Changing "Repository" to "repository" in Build.PL will allow this
