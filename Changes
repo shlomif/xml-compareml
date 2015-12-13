@@ -1,5 +1,8 @@
 Revision history for XML::CompareML
 
+0.2.10  2015-12-13
+    - Update old E-mail address.
+
 0.2.9   2014-02-01
     - Minimal version of perl (CPANTS).
     - Add separate LICENSE file (CPANTS).

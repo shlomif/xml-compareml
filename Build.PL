@@ -9,7 +9,7 @@ use XML::Grammar::Builder;
 my $builder = XML::Grammar::Builder->new(
     module_name         => 'XML::CompareML',
     license             => 'mit',
-    dist_author         => 'Shlomi Fish <shlomif@iglu.org.il>',
+    dist_author         => 'Shlomi Fish',
     configure_requires => {
         'Module::Build' => '0.36',
     },
