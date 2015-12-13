@@ -7,7 +7,7 @@ use 5.008;
 
 use vars qw($VERSION);
 
-$VERSION = '0.2.9';
+$VERSION = '0.2.10';
 
 1; # End of XML::CompareML
 
