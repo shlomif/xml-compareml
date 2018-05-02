@@ -1,5 +1,8 @@
 Revision history for XML::CompareML
 
+0.2.11  2018-05-02
+    - Convert to Dist-Zilla.
+
 0.2.10  2015-12-13
     - Update old E-mail address.
 

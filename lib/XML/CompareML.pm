@@ -5,10 +5,6 @@ use warnings;
 
 use 5.008;
 
-use vars qw($VERSION);
-
-$VERSION = '0.2.10';
-
 1;    # End of XML::CompareML
 
 __END__
@@ -16,10 +12,6 @@ __END__
 =head1 NAME
 
 XML::CompareML - A processor for the CompareML markup language
-
-=head1 VERSION
-
-Version 0.2.9
 
 =head1 SYNOPSIS
 
