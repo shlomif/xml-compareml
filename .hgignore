@@ -1,11 +1,5 @@
-Build
-META.json
-META.yml
-MYMETA.json
-MYMETA.yml
-_build
-blib
+.build/
+.tidyall.d/
 
 syntax: regexp
 
-^XML-CompareML-v\d+\.\d+\.\d+(?:/|\.tar\.gz$)
