@@ -8,20 +8,20 @@ use XML::CompareML::HTML;
 use IO::Scalar;
 
 my $no_use_buffer = "";
-my $file = IO::Scalar->new(\$no_use_buffer);
-my $converter =
-    XML::CompareML::HTML->new(
-        'input_filename' => "t/files/scm-sys-list-1.xml",
-        'output_handle' => $file,
-        'data_dir' => "./extradata",
-    );
+my $file          = IO::Scalar->new( \$no_use_buffer );
+my $converter     = XML::CompareML::HTML->new(
+    'input_filename' => "t/files/scm-sys-list-1.xml",
+    'output_handle'  => $file,
+    'data_dir'       => "./extradata",
+);
 
 my $buffer = "";
-my $fh = IO::Scalar->new(\$buffer);
-$converter->gen_systems_list(output_handle => $fh);
+my $fh     = IO::Scalar->new( \$buffer );
+$converter->gen_systems_list( output_handle => $fh );
 
 # TEST
-is ($buffer,
+is(
+    $buffer,
     <<"EOF",
 <li><a href="http://www.cvshome.org/">CVS</a></li>
 <li><a href="http://subversion.tigris.org/">Subversion Version Control System</a></li>

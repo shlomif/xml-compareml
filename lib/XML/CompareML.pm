@@ -9,7 +9,7 @@ use vars qw($VERSION);
 
 $VERSION = '0.2.10';
 
-1; # End of XML::CompareML
+1;    # End of XML::CompareML
 
 __END__
 

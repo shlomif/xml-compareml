@@ -10,35 +10,33 @@ use IO::Scalar;
 use Test::Differences;
 
 {
-    my $buffer = "";
-    my $file = IO::Scalar->new(\$buffer);
-    my $converter =
-        XML::CompareML::HTML->new(
-            'input_filename' => "t/files/scm-comparison.xml",
-            'output_handle' => $file,
-            'data_dir' => "./extradata",
-        );
+    my $buffer    = "";
+    my $file      = IO::Scalar->new( \$buffer );
+    my $converter = XML::CompareML::HTML->new(
+        'input_filename' => "t/files/scm-comparison.xml",
+        'output_handle'  => $file,
+        'data_dir'       => "./extradata",
+    );
 
     $converter->process();
 
     # TEST
-    ok(length($buffer) > 0, "\$buffer was filled in");
+    ok( length($buffer) > 0, "\$buffer was filled in" );
 }
 
 {
-    my $buffer = "";
-    my $file = IO::Scalar->new(\$buffer);
-    my $converter =
-        XML::CompareML::DocBook->new(
-            'input_filename' => "t/files/scm-comparison.xml",
-            'output_handle' => $file,
-            'data_dir' => "./extradata",
-        );
+    my $buffer    = "";
+    my $file      = IO::Scalar->new( \$buffer );
+    my $converter = XML::CompareML::DocBook->new(
+        'input_filename' => "t/files/scm-comparison.xml",
+        'output_handle'  => $file,
+        'data_dir'       => "./extradata",
+    );
 
     $converter->process();
 
     # TEST
-    ok(length($buffer) > 0, "\$buffer was filled in");
+    ok( length($buffer) > 0, "\$buffer was filled in" );
 }
 
 sub normalize_space
@@ -52,14 +50,13 @@ sub normalize_space
 
 # Check for actual content.
 {
-    my $buffer = "";
-    my $file = IO::Scalar->new(\$buffer);
-    my $converter =
-        XML::CompareML::HTML->new(
-            'input_filename' => "examples/scm-comparison.xml",
-            'output_handle' => $file,
-            'data_dir' => "./extradata",
-        );
+    my $buffer    = "";
+    my $file      = IO::Scalar->new( \$buffer );
+    my $converter = XML::CompareML::HTML->new(
+        'input_filename' => "examples/scm-comparison.xml",
+        'output_handle'  => $file,
+        'data_dir'       => "./extradata",
+    );
 
     $converter->process();
 
@@ -81,9 +78,9 @@ sub normalize_space
     }
     close($good_html_fh);
 
-    normalize_space(\$buffer);
-    normalize_space(\$good_content);
+    normalize_space( \$buffer );
+    normalize_space( \$good_content );
 
     # TEST
-    eq_or_diff ($buffer, $good_content, "XSLT Works");
+    eq_or_diff( $buffer, $good_content, "XSLT Works" );
 }

@@ -20,8 +20,8 @@ use base 'XML::CompareML::Base';
 sub _print_header
 {
     my $self = shift;
-    my $o = $self->{o};
-    print {*{$o}} <<"EOF";
+    my $o    = $self->{o};
+    print { *{$o} } <<"EOF";
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
 "/usr/share/sgml/docbook/xml-dtd-4.1.2/docbookx.dtd"[
@@ -44,7 +44,7 @@ sub _finish_rendering
 sub _print_footer
 {
     my $self = shift;
-    print {*{$self->{o}}} "</article>\n";
+    print { *{ $self->{o} } } "</article>\n";
 }
 
 sub _render_section_start
@@ -52,10 +52,10 @@ sub _render_section_start
     my $self = shift;
     my %args = (@_);
 
-    my $depth = $args{depth};
-    my $id = $args{id};
+    my $depth        = $args{depth};
+    my $id           = $args{id};
     my $title_string = $args{title_string};
-    my $expl = $args{expl};
+    my $expl         = $args{expl};
     my $sub_sections = $args{sub_sections};
 
     if ($depth)
@@ -65,24 +65,27 @@ sub _render_section_start
 
     $self->_out("<title>$title_string</title>\n");
 
-    if ($depth == 0)
+    if ( $depth == 0 )
     {
-        if (defined($self->_timestamp()))
+        if ( defined( $self->_timestamp() ) )
         {
-            $self->_out("<articleinfo><date>" . $self->_timestamp() .
-                "</date></articleinfo>\n");
+            $self->_out( "<articleinfo><date>"
+                    . $self->_timestamp()
+                    . "</date></articleinfo>\n" );
         }
     }
 
     if ($expl)
     {
-        $self->_out("<para>\n" . $self->_xml_node_contents_to_string($expl) . "\n</para>\n");
+        $self->_out( "<para>\n"
+                . $self->_xml_node_contents_to_string($expl)
+                . "\n</para>\n" );
     }
 }
 
 sub _render_sys_table_start
 {
-    my ($self,%args) = @_;
+    my ( $self, %args ) = @_;
 
     my $title_string = $args{title_string};
 
@@ -105,26 +108,30 @@ EOF
 sub _html_to_docbook
 {
     my $parent_node = shift;
-    my $not_first = shift;
+    my $not_first   = shift;
     my @child_nodes = $parent_node->childNodes();
-    my $ret = "";
+    my $ret         = "";
 
     foreach my $node (@child_nodes)
     {
-        if ($node->nodeType() == ELEMENT_NODE())
+        if ( $node->nodeType() == ELEMENT_NODE() )
         {
-            if ($node->nodeName() eq "a")
+            if ( $node->nodeName() eq "a" )
             {
                 $ret .= "<ulink url=\"" . $node->getAttribute("href") . "\">";
             }
             else
             {
                 my @attrs = $node->attributes();
-                $ret .= "<" . $node->nodeName() . " " . join(" ", map { "$_=\"".$node->getAttribute($_)."\""} @attrs) . ">";
+                $ret .= "<"
+                    . $node->nodeName() . " "
+                    . join( " ",
+                    map { "$_=\"" . $node->getAttribute($_) . "\"" } @attrs )
+                    . ">";
             }
-            $ret .= _html_to_docbook($node, 1);
+            $ret .= _html_to_docbook( $node, 1 );
 
-            if ($node->nodeName() eq "a")
+            if ( $node->nodeName() eq "a" )
             {
                 $ret .= "</ulink>";
             }
@@ -138,6 +145,7 @@ sub _html_to_docbook
             $ret .= $node->toString();
         }
     }
+
     # Remove leading and trailing space.
     if (1)
     {
@@ -149,16 +157,20 @@ sub _html_to_docbook
 
 sub _render_s_elem
 {
-    my ($self, $s_elem) = @_;
+    my ( $self, $s_elem ) = @_;
     return _html_to_docbook($s_elem);
 }
 
 sub _render_sys_table_row
 {
-    my ($self, %args) = @_;
+    my ( $self, %args ) = @_;
 
-    $self->_out("<row>\n<entry>" . $args{name}. "</entry>\n" .
-                "<entry>\n" . $args{desc} . "\n</entry>\n</row>\n");
+    $self->_out( "<row>\n<entry>"
+            . $args{name}
+            . "</entry>\n"
+            . "<entry>\n"
+            . $args{desc}
+            . "\n</entry>\n</row>\n" );
 }
 
 sub _render_sys_table_end
@@ -169,7 +181,7 @@ sub _render_sys_table_end
 
 sub _render_section_end
 {
-    my ($self, %args) = @_;
+    my ( $self, %args ) = @_;
 
     my $depth = $args{depth};
 

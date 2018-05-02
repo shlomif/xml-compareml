@@ -181,8 +181,8 @@ TODO:
                 <s id="co-op">Copying doesn't retain history, moving does.</s>
                 <s id="vss">Yes. Copies are supported up to a point.</s>
                 <s id="cmsynergy">Yes, and it's a very cheap operation (update the target
-					directory to include the new file/directory).
-				</s>
+                    directory to include the new file/directory).
+                </s>
            </compare>
         </section>
         <section id="repos_clone">
@@ -366,7 +366,7 @@ TODO:
                 <s id="co-op">Yes. Changesets are the default.</s>
                 <s id="vss">No.  Changes are file-specific.</s>
                 <s id="cmsynergy">Yes.  Changesets (or tasks) are fundamental
-                	to the way Synergy works.</s>
+                    to the way Synergy works.</s>
            </compare>
         </section>
         <section id="annotate">
@@ -401,7 +401,7 @@ TODO:
                     any two versions using a visual differ.
                 </s>
                 <s id="cmsynergy">Probably, if you're a sufficiently proficient hacker with
-					their scripting language.
+                    their scripting language.
                 </s>
            </compare>
         </section>
@@ -452,8 +452,8 @@ TODO:
                 </s>
                 <s id="vss">Yes.</s>
                 <s id="cmsynergy">Yes and no.  Files and directories are checked out and in
-					individually, however you have to work in the context of a project,
-					which consists of one or more directories.</s>
+                    individually, however you have to work in the context of a project,
+                    which consists of one or more directories.</s>
            </compare>
         </section>
         <section id="tracking_uncommited_changes">
@@ -491,7 +491,7 @@ TODO:
                 <s id="co-op">Yes, using built-in visual differ/editor.</s>
                 <s id="vss">Yes, using integrated diff tool.</s>
                 <s id="cmsynergy">Yes, either using integrated diff tool or user-configured
-					external diff tool</s>
+                    external diff tool</s>
             </compare>
         </section>
         <section id="per_file_commit_messages">
@@ -611,14 +611,14 @@ TODO:
                     is included.
                 </s>
                 <s id="vss">Medium.  Help file which is sometimes useful.
-                	However, the interface is reasonably intuitive so
-                	documentation isn't needed as much.
+                    However, the interface is reasonably intuitive so
+                    documentation isn't needed as much.
                 </s>
                 <s id="cmsynergy">Medium.  Lots of books, plus somewhat
-                	clunky set of HTML pages, but has some radical concepts
-                	which can cause real problems really quickly.  They recommend
-                	a day's training for basic users, more for more advanced users.
-                	Took a while to become fluent.
+                    clunky set of HTML pages, but has some radical concepts
+                    which can cause real problems really quickly.  They recommend
+                    a day's training for basic users, more for more advanced users.
+                    Took a while to become fluent.
                 </s>
             </compare>
         </section>
@@ -709,10 +709,10 @@ TODO:
                 </s>
                 <s id="cmsynergy">
                     Medium.  There is a detailed install guide for
-                	setting it up using a binary kit and a set of scripts.  However
-                	it still took several tries to get it properly installed and
-                	configured.  The Windows client is a slightly clunky Windows
-                	installer.
+                    setting it up using a binary kit and a set of scripts.  However
+                    it still took several tries to get it properly installed and
+                    configured.  The Windows client is a slightly clunky Windows
+                    installer.
                 </s>
            </compare>
         </section>
@@ -786,12 +786,12 @@ TODO:
                 <s id="co-op">Basic commands are compatible with CVS.</s>
                 <s id="vss">
                     A bit of an afterthought.  It's possible to do basic
-                	things, but it's really geared up for using the GUI.
+                    things, but it's really geared up for using the GUI.
                 </s>
                 <s id="cmsynergy">An extensive and powerful command set,
-                	which has some CVS similarity, though the architecture
-                	is so different that it quickly moves away for anything
-                	but the basics.
+                    which has some CVS similarity, though the architecture
+                    is so different that it quickly moves away for anything
+                    but the basics.
                 </s>
            </compare>
         </section>

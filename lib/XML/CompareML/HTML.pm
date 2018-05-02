@@ -13,11 +13,13 @@ use XML::CompareML::ConfigData;
 
 use base 'XML::CompareML::Base';
 
-__PACKAGE__->mk_accessors(qw(
-    _data_dir
-    _xml_parser
-    _stylesheet
-    ));
+__PACKAGE__->mk_accessors(
+    qw(
+        _data_dir
+        _xml_parser
+        _stylesheet
+        )
+);
 
 sub _initialize
 {
@@ -27,23 +29,22 @@ sub _initialize
 
     my (%args) = (@_);
 
-    my $data_dir = $args{'data_dir'} ||
-        XML::CompareML::ConfigData->config('extradata_install_path')->[0];
+    my $data_dir = $args{'data_dir'}
+        || XML::CompareML::ConfigData->config('extradata_install_path')->[0];
 
     $self->_data_dir($data_dir);
 
-    $self->_xml_parser(XML::LibXML->new());
+    $self->_xml_parser( XML::LibXML->new() );
 
     my $xslt = XML::LibXSLT->new();
 
-    my $style_doc = $self->_xml_parser()->parse_file(
-            File::Spec->catfile(
-                $self->_data_dir(),
-                "compare-ml.xslt"
-            ),
+    my $style_doc =
+        $self->_xml_parser()
+        ->parse_file(
+        File::Spec->catfile( $self->_data_dir(), "compare-ml.xslt" ),
         );
 
-    $self->_stylesheet($xslt->parse_stylesheet($style_doc));
+    $self->_stylesheet( $xslt->parse_stylesheet($style_doc) );
 
     return 0;
 }
@@ -56,7 +57,7 @@ Do the actual processing using the XSLT stylesheet.
 
 sub process
 {
-    my ($self, $args) = @_;
+    my ( $self, $args ) = @_;
 
 =begin RELAX_NG_VALIDATION
 
@@ -82,9 +83,9 @@ sub process
 
     my $stylesheet = $self->_stylesheet();
 
-    my $results = $stylesheet->transform($self->dom());
+    my $results = $stylesheet->transform( $self->dom() );
 
-    print {*{$self->{o}}} $stylesheet->output_string($results);
+    print { *{ $self->{o} } } $stylesheet->output_string($results);
 
     return 0;
 }
@@ -111,27 +112,29 @@ L<http://better-scm.berlios.de/comparison/>
 
 sub gen_systems_list
 {
-    my ($self, %args) = @_;
+    my ( $self, %args ) = @_;
 
     my $fh = $args{output_handle};
 
-    my @implementations = $self->_findnodes("/comparison/meta/implementations/impl");
+    my @implementations =
+        $self->_findnodes("/comparison/meta/implementations/impl");
 
     foreach my $impl (@implementations)
     {
-        my $name = $self->_impl_get_tag_text($impl, "name");
-        my $url = $self->_impl_get_tag_text($impl, "url");
-        my $fullname = $self->_impl_get_tag_text($impl, "fullname");
-        my $vendor = $self->_impl_get_tag_text($impl, "vendor");
-        if (!defined($url))
+        my $name     = $self->_impl_get_tag_text( $impl, "name" );
+        my $url      = $self->_impl_get_tag_text( $impl, "url" );
+        my $fullname = $self->_impl_get_tag_text( $impl, "fullname" );
+        my $vendor   = $self->_impl_get_tag_text( $impl, "vendor" );
+        if ( !defined($url) )
         {
             die "URL not specified for implementation $name.";
         }
-        print {$fh} qq{<li><a href="} . CGI::escapeHTML($url) . qq{">} .
-            CGI::escapeHTML(defined($fullname) ? $fullname : $name) .
-            qq{</a>} . (defined($vendor) ? " by $vendor" : "") .
-            qq{</li>\n}
-            ;
+        print {$fh} qq{<li><a href="}
+            . CGI::escapeHTML($url) . qq{">}
+            . CGI::escapeHTML( defined($fullname) ? $fullname : $name )
+            . qq{</a>}
+            . ( defined($vendor) ? " by $vendor" : "" )
+            . qq{</li>\n};
     }
 }
 
