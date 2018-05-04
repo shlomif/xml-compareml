@@ -26,7 +26,7 @@ use XML::LibXML;
 
 use XML::CompareML::DTD::Generate;
 
-use base qw(Class::Accessor);
+use parent qw(Class::Accessor);
 
 __PACKAGE__->mk_accessors( qw(_timestamp root_elem impls_indexes impls_names),
     qw(parser dom), );

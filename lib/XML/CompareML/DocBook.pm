@@ -15,7 +15,7 @@ See L<XML::CompareXML>.
 
 use XML::LibXML::Common qw(:w3c);
 
-use base 'XML::CompareML::Base';
+use parent 'XML::CompareML::Base';
 
 sub _print_header
 {

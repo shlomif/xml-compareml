@@ -11,7 +11,7 @@ use XML::LibXSLT;
 
 use XML::CompareML::ConfigData;
 
-use base 'XML::CompareML::Base';
+use parent 'XML::CompareML::Base';
 
 __PACKAGE__->mk_accessors(
     qw(
