@@ -1,5 +1,8 @@
 Revision history for XML::CompareML
 
+0.2.13  2020-10-06
+    - dist.ini / weaver.ini / .tidyallrc cleanups
+
 0.2.12  2018-05-04
     - Fix deps on ::ConfigData .
 
