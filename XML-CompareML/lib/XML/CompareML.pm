@@ -72,7 +72,7 @@ your bug as I make changes.
 Copyright 2005 Shlomi Fish, All Rights Reserved.
 
 This program is free software; you can redistribute it and/or modify it
-under the same terms as the MIT X11 license.
+under the same terms as the MIT / Expat license.
 
 =cut
 
