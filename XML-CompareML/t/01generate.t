@@ -1,13 +1,14 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
+
+use strict;
+use warnings;
 
 use Test::More tests => 3;
 
-use strict;
-
-use XML::CompareML::HTML;
-use XML::CompareML::DocBook;
-use IO::Scalar;
-use Test::Differences;
+use XML::CompareML::HTML    ();
+use XML::CompareML::DocBook ();
+use IO::Scalar              ();
+use Test::Differences qw/ eq_or_diff /;
 
 {
     my $buffer    = "";
@@ -63,14 +64,13 @@ sub normalize_space
     # Make it "if (1)" if you want to generate a good version.
     if (0)
     {
-        open my $o, ">", "examples/scm-comparison.output.html";
-        binmode $o, ":utf8";
+        open my $o, ">:encoding(UTF-8)", "examples/scm-comparison.output.html";
         print {$o} $buffer;
         close($o);
     }
 
-    open my $good_html_fh, "<", "examples/scm-comparison.output.html";
-    binmode $good_html_fh, ":utf8";
+    open my $good_html_fh, "<:encoding(UTF-8)",
+        "examples/scm-comparison.output.html";
     my $good_content;
     {
         local $/;

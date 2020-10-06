@@ -87,7 +87,7 @@ sub _get_implementations
             +{
                 'id'   => $_->getAttribute("id"),
                 'name' => $self->_impl_get_name($_)
-                }
+            }
         } $self->_findnodes("/comparison/meta/implementations/impl")
     ];
 }
@@ -102,7 +102,7 @@ sub _get_timestamp
     }
     else
     {
-        return undef;
+        return;
     }
 }
 
@@ -152,7 +152,7 @@ sub process
     $self->impls_indexes(
         +{ map { $impls[$_]->{'id'} => $_ } ( 0 .. $#impls ) } );
     $self->impls_names( +{ map { $_->{'id'} => $_->{'name'} } @impls } );
-    $self->_timestamp( $self->_get_timestamp() );
+    $self->_timestamp( scalar( $self->_get_timestamp() ) );
 
     $self->{document_text} = "";
     $self->{toc_text}      = "";
